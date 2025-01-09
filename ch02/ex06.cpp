@@ -6,13 +6,8 @@ using namespace std;
 
 void clickMouse(int event, int x, int y, int falgs, void* param) {
 	Mat& img = *(Mat*)(param);
-	if (event == EVENT_LBUTTONDOWN) {
-		circle(img, Point(x, y), 100, Scalar(255, 0, 0), 10);
-	}
-	if (event==EVENT_RBUTTONDOWN)
-	{
-		rectangle(img, Point(x, y), Point(x + 100, y + 100), Scalar(0, 0, 255), 10);
-	}
+	if (event == EVENT_LBUTTONDOWN) circle(img, Point(x, y), 100, Scalar(255, 0, 0), 10);
+	if (event == EVENT_RBUTTONDOWN) rectangle(img, Point(x, y), Point(x + 100, y + 100), Scalar(0, 0, 255), 10);
 	imshow("image", img);
 }
 
